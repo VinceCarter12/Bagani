@@ -1,0 +1,63 @@
+<!-- Nike-Style Main Header -->
+<header class="main-header">
+    <div class="header-sticky">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container nike-nav-container">
+                <!-- Left: Logo -->
+                <a class="navbar-brand" href="/">
+                    <img src="/images/bagani-logo.png" alt="Bagani Logo">
+                </a>
+
+                <!-- Center: Main Nav Links -->
+                <div class="collapse navbar-collapse main-menu">
+                    <div class="nav-menu-wrapper">
+                        <ul class="navbar-nav" id="menu">
+                            <li class="nav-item"><a class="nav-link{% if activePage == 'home' %} active{% endif %}" href="/" data-en="Home" data-tl="Tahanan">Home</a></li>
+                            <li class="nav-item"><a class="nav-link{% if activePage == 'about' %} active{% endif %}" href="/about/" data-en="About Us" data-tl="Tungkol Sa Amin">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link{% if activePage == 'products' %} active{% endif %}" href="/products/" data-en="Products" data-tl="Mga Produkto">Products</a></li>
+                            <li class="nav-item"><a class="nav-link{% if activePage == 'news' %} active{% endif %}" href="/news/" data-en="News" data-tl="Balita">News</a></li>
+                            <li class="nav-item"><a class="nav-link{% if activePage == 'stores' %} active{% endif %}" href="/store-locator/" data-en="Stores" data-tl="Mga Tindahan">Stores</a></li>
+                            <li class="nav-item"><a class="nav-link{% if activePage == 'contact' %} active{% endif %}" href="/contact/" data-en="Contact" data-tl="Makipag-ugnayan">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Right: Action Icons (Nike-style) -->
+                <div class="nike-nav-actions">
+                    <!-- Search toggle -->
+                    <button class="nike-nav-icon nike-search-toggle" id="nikeSearchToggle" aria-label="Search">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </button>
+                    <!-- Social icons (compact) -->
+                    {% if site.social.facebook and site.social.facebook != "#" %}
+                    <a href="{{ site.social.facebook }}" class="nike-nav-icon" aria-label="Facebook" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+                    {% endif %}
+                    {% if site.social.instagram and site.social.instagram != "#" %}
+                    <a href="{{ site.social.instagram }}" class="nike-nav-icon" aria-label="Instagram" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i></a>
+                    {% endif %}
+                    <!-- CTA button -->
+                    <a href="/products/" class="nike-nav-cta" data-en="Shop Now" data-tl="Mamili Na">Shop Now</a>
+                </div>
+
+                <!-- Mobile: hamburger -->
+                <div class="navbar-toggle"></div>
+            </div>
+        </nav>
+
+        <!-- Nike-style search drawer -->
+        <div class="nike-search-drawer" id="nikeSearchDrawer">
+            <div class="container">
+                <div class="nike-search-inner">
+                    <i class="fa-solid fa-magnifying-glass nike-search-icon"></i>
+                    <input type="text" id="nikeSearchInput" placeholder="Search products, news, stores..." autocomplete="off">
+                    <button class="nike-search-close" id="nikeSearchClose" aria-label="Close search">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="responsive-menu"></div>
+    </div>
+</header>
+<!-- Header End -->

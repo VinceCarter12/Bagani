@@ -1,0 +1,72 @@
+---
+layout: base.njk
+title: Products
+activePage: products
+pageHeaderTitle: 'Our <span>Products</span>'
+breadcrumbActive: our products
+---
+
+{% include "page-header.njk" %}
+
+<!-- Product Categories Start -->
+<div class="page-services">
+    <div class="container">
+        <!-- Product Filter Nav -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="product-categories wow fadeInUp">
+                    <ul>
+                        <li><a href="#" class="active-btn" data-filter="*">All Products</a></li>
+                        <li><a href="#" data-filter=".amihan">Amihan</a></li>
+                        <li><a href="#" data-filter=".laon">Laon</a></li>
+                        <li><a href="#" data-filter=".aman">Aman</a></li>
+                        <li><a href="#" data-filter=".anitun">Anitun</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row project-item-boxes">
+            {% for product in productsList %}
+            <div class="col-lg-4 col-md-6 project-item-box {{ product.category }}">
+                <div class="product-card wow fadeInUp"{% if loop.index0 % 3 == 1 %} data-wow-delay="0.2s"{% elif loop.index0 % 3 == 2 %} data-wow-delay="0.4s"{% endif %}>
+                    <div class="product-image">
+                        <a href="/products/{{ product.slug }}/">
+                            <img src="{{ product.image }}" alt="Bagani {{ product.name }}">
+                        </a>
+                    </div>
+                    <div class="product-body">
+                        <span class="product-line">{{ product.line }}</span>
+                        <h3>{{ product.name }}</h3>
+                        <p class="product-spec">{{ product.spec }}</p>
+                        <p class="product-desc">{{ product.shortDesc }}</p>
+                    </div>
+                    <div class="product-footer">
+                        <a href="/products/{{ product.slug }}/">View Details <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+<!-- Product Categories End -->
+
+<script>
+// Product Filter with Isotope
+$(document).ready(function() {
+    var $grid = $('.project-item-boxes').isotope({
+        itemSelector: '.project-item-box',
+        layoutMode: 'fitRows'
+    });
+
+    $('.product-categories ul li a').on('click', function(e) {
+        e.preventDefault();
+        var filterValue = $(this).attr('data-filter');
+        $grid.isotope({ filter: filterValue });
+        $('.product-categories ul li a').removeClass('active-btn');
+        $(this).addClass('active-btn');
+    });
+});
+</script>

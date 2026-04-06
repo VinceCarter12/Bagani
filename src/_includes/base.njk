@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<!-- Meta -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+	<meta name="description" content="{{ description | default(site.description) }}">
+	<meta name="keywords" content="{{ keywords | default(site.keywords) }}">
+	<meta name="author" content="Bagani Oil">
+	<!-- Page Title -->
+    <title>{{ title }}{% if title != "Bagani Oil" %} - Bagani Oil{% endif %}</title>
+	<!-- Favicon Icon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.png">
+	<!-- Google Fonts Css-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+	<!-- Bootstrap Css -->
+	<link href="/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<!-- SlickNav Css -->
+	<link href="/css/slicknav.min.css" rel="stylesheet">
+	<!-- Swiper Css -->
+	<link rel="stylesheet" href="/css/swiper-bundle.min.css">
+	<!-- Font Awesome Icon Css-->
+	<link href="/css/all.css" rel="stylesheet" media="screen">
+	<!-- Animated Css -->
+	<link href="/css/animate.css" rel="stylesheet">
+    <!-- Magnific Popup Core Css File -->
+	<link rel="stylesheet" href="/css/magnific-popup.css">
+	<!-- Mouse Cursor Css File -->
+	<link rel="stylesheet" href="/css/mousecursor.css">
+	<!-- Main Custom Css -->
+	<link href="/css/custom.css" rel="stylesheet" media="screen">
+	<!-- Leaflet CSS (loaded globally so map container is sized correctly) -->
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+	<!-- Netlify Identity Widget -->
+	<script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+
+    {% include "preloader.njk" %}
+
+    <!-- Fixed header wrapper: topbar + navbar -->
+    <div id="bagani-header-wrap">
+        {% include "topbar.njk" %}
+        {% include "header.njk" %}
+    </div>
+    <!-- Spacer so content doesn't hide under fixed header -->
+    <div id="header-spacer"></div>
+
+    {{ content | safe }}
+
+    {% include "footer.njk" %}
+
+    <!-- Jquery Library File -->
+    <script src="/js/jquery-3.7.1.min.js"></script>
+    <!-- Bootstrap js file -->
+    <script src="/js/bootstrap.min.js"></script>
+    <!-- Validator js file -->
+    <script src="/js/validator.min.js"></script>
+    <!-- SlickNav js file -->
+    <script src="/js/jquery.slicknav.js"></script>
+    <!-- Swiper js file -->
+    <script src="/js/swiper-bundle.min.js"></script>
+    <!-- Counter js file -->
+    <script src="/js/jquery.waypoints.min.js"></script>
+    <script src="/js/jquery.counterup.min.js"></script>
+    <!-- Isotop js file -->
+	<script src="/js/isotope.min.js"></script>
+    <!-- Magnific js file -->
+    <script src="/js/jquery.magnific-popup.min.js"></script>
+    <!-- SmoothScroll -->
+    <script src="/js/SmoothScroll.js"></script>
+    <!-- Parallax js -->
+    <script src="/js/parallaxie.js"></script>
+    <!-- MagicCursor js file -->
+    <script src="/js/gsap.min.js"></script>
+    <script src="/js/magiccursor.js"></script>
+    <!-- Text Effect js file -->
+    <script src="/js/SplitText.js"></script>
+    <script src="/js/ScrollTrigger.min.js"></script>
+    <!-- YTPlayer js File -->
+    <script src="/js/jquery.mb.YTPlayer.min.js"></script>
+    <!-- Wow js file -->
+    <script src="/js/wow.min.js"></script>
+    <!-- Main Custom js file -->
+    <script src="/js/function.js"></script>
+
+    <!-- Floating Navbar Script -->
+    <script>
+    (function() {
+      var wrap = document.getElementById('bagani-header-wrap');
+      var spacer = document.getElementById('header-spacer');
+
+      function syncSpacer() {
+        if (spacer && wrap) spacer.style.height = wrap.offsetHeight + 'px';
+      }
+
+      function onScroll() {
+        var scrollY = window.scrollY || window.pageYOffset;
+        if (scrollY > 40) {
+          wrap.classList.add('scrolled');
+        } else {
+          wrap.classList.remove('scrolled');
+        }
+      }
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      window.addEventListener('resize', syncSpacer);
+      document.addEventListener('DOMContentLoaded', function() {
+        syncSpacer();
+        onScroll();
+
+        // Nike-style search drawer toggle
+        var searchToggle = document.getElementById('nikeSearchToggle');
+        var searchDrawer = document.getElementById('nikeSearchDrawer');
+        var searchClose = document.getElementById('nikeSearchClose');
+        var searchInput = document.getElementById('nikeSearchInput');
+
+        if (searchToggle && searchDrawer) {
+          searchToggle.addEventListener('click', function() {
+            searchDrawer.classList.toggle('open');
+            if (searchDrawer.classList.contains('open') && searchInput) {
+              setTimeout(function() { searchInput.focus(); }, 100);
+            }
+          });
+        }
+        if (searchClose && searchDrawer) {
+          searchClose.addEventListener('click', function() {
+            searchDrawer.classList.remove('open');
+          });
+        }
+      });
+      // re-sync after fonts/images load
+      window.addEventListener('load', syncSpacer);
+    })();
+    </script>
+
+    <!-- Language Toggle Script -->
+    <script>
+      // Swap all elements that have data-en and data-tl attributes
+      function applyLang(lang) {
+        document.querySelectorAll('[data-en]').forEach(function(el) {
+          el.textContent = lang === 'tl' ? (el.getAttribute('data-tl') || el.getAttribute('data-en')) : el.getAttribute('data-en');
+        });
+        var btn = document.getElementById('langToggle');
+        if (btn) {
+          btn.textContent = lang === 'tl' ? 'TL' : 'EN';
+          btn.style.color = lang === 'tl' ? '#121212' : '#FFC107';
+          btn.style.background = lang === 'tl' ? '#FFC107' : 'none';
+        }
+        document.documentElement.setAttribute('lang', lang === 'tl' ? 'tl' : 'en');
+        localStorage.setItem('bagani-lang', lang);
+      }
+
+      function toggleLang() {
+        var current = localStorage.getItem('bagani-lang') || 'en';
+        applyLang(current === 'en' ? 'tl' : 'en');
+      }
+
+      // Apply saved preference on load
+      document.addEventListener('DOMContentLoaded', function() {
+        var saved = localStorage.getItem('bagani-lang') || 'en';
+        if (saved === 'tl') applyLang('tl');
+      });
+    </script>
+
+    <!-- Netlify Identity Redirect -->
+    <script>
+      if (window.netlifyIdentity) {
+        window.netlifyIdentity.on("init", function(user) {
+          if (!user) {
+            window.netlifyIdentity.on("login", function() {
+              document.location.href = "/admin/";
+            });
+          }
+        });
+      }
+    </script>
+
+    {% if site.facebookPageId and site.facebookPageId != "YOUR_FACEBOOK_PAGE_ID" %}
+    <!-- Facebook Messenger Chat Plugin -->
+    <div id="fb-root"></div>
+    <div id="fb-customer-chat" class="fb-customerchat"
+      attribution="biz_inbox"
+      page_id="{{ site.facebookPageId }}"
+      theme_color="#FFC107"
+      logged_in_greeting="Hi! How can we help you with Bagani Oil?"
+      logged_out_greeting="Hi! How can we help you with Bagani Oil?">
+    </div>
+    <script>
+      var chatbox = document.getElementById('fb-customer-chat');
+      chatbox.setAttribute("page_id", "{{ site.facebookPageId }}");
+      chatbox.setAttribute("attribution", "biz_inbox");
+      window.fbAsyncInit = function() {
+        FB.init({ xfbml: true, version: "v18.0" });
+      };
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = 'https://connect.facebook.net/en_US/sdk/xfbml.customerchat.js';
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));
+    </script>
+    {% endif %}
+</body>
+</html>

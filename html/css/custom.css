@@ -1,6 +1,5 @@
 /* ----------------------------------------------------------------------------------------
-* Author        : Awaiken
-* Template Name : Toplax - Factory & Industry HTML Template
+* Brand         : Bagani - Premium Motorcycle Oils & Lubricants
 * File          : CSS File
 * Version       : 1.0
 * ---------------------------------------------------------------------------------------- */
@@ -55,112 +54,10 @@
 	--default-font			: "Manrope", sans-serif;
 }
 
-/* Dark Mode Variables */
-[data-theme="dark"] {
-	--primary-color			: #FFFFFF;
-	--secondary-color		: #1A1A1A;
-	--text-color			: #B0B0B0;
-	--accent-color			: #FFC107;
-	--white-color			: #121212;
-	--divider-color			: #333333;
-	--dark-divider-color	: #FFFFFF1A;
-}
 
-[data-theme="dark"] body,
-[data-theme="dark"] {
-	background-color: #121212;
-	color: #B0B0B0;
-}
-
-[data-theme="dark"] .topbar {
-	background-color: #0A0A0A;
-	border-bottom-color: #333;
-}
-
-[data-theme="dark"] .main-header,
-[data-theme="dark"] .header-sticky {
-	background-color: #1A1A1A;
-}
-
-[data-theme="dark"] .page-header {
-	background-color: #1A1A1A;
-}
-
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] h5,
-[data-theme="dark"] h6 {
-	color: #FFFFFF;
-}
-
-[data-theme="dark"] .about-us,
-[data-theme="dark"] .our-story,
-[data-theme="dark"] .our-process,
-[data-theme="dark"] .our-testimonial,
-[data-theme="dark"] .our-blog,
-[data-theme="dark"] .page-services,
-[data-theme="dark"] .page-blog-archive,
-[data-theme="dark"] .page-blog-single,
-[data-theme="dark"] .page-contact-us,
-[data-theme="dark"] .page-about-us,
-[data-theme="dark"] .our-pricing {
-	background-color: #121212;
-}
-
-[data-theme="dark"] .service-item,
-[data-theme="dark"] .pricing-box,
-[data-theme="dark"] .post-item,
-[data-theme="dark"] .contact-us-form,
-[data-theme="dark"] .sidebar-widget {
-	background-color: #1E1E1E;
-	border-color: #333;
-}
-
-[data-theme="dark"] .form-control {
-	background-color: #2A2A2A;
-	border-color: #444;
-	color: #FFFFFF;
-}
-
-[data-theme="dark"] .form-control::placeholder {
-	color: #888;
-}
-
-[data-theme="dark"] .main-footer {
-	background-color: #0A0A0A;
-}
-
-[data-theme="dark"] .footer-copyright {
-	border-top-color: #333;
-}
-
-[data-theme="dark"] .section-title p,
-[data-theme="dark"] .section-title-content p {
-	color: #B0B0B0;
-}
-
-/* Dark Mode Toggle Button */
-.dark-mode-toggle {
+/* Product Grid Equal-Height Columns */
+.project-item-box {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: 40px;
-	height: 40px;
-	background: transparent;
-	border: 2px solid var(--accent-color);
-	border-radius: 50%;
-	cursor: pointer;
-	color: var(--accent-color);
-	font-size: 18px;
-	transition: all 0.3s ease;
-	margin-left: 15px;
-}
-
-.dark-mode-toggle:hover {
-	background: var(--accent-color);
-	color: #121212;
 }
 
 /* Product Card Styles */
@@ -171,11 +68,9 @@
 	transition: all 0.3s ease;
 	margin-bottom: 30px;
 	box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-[data-theme="dark"] .product-card {
-	background: #1E1E1E;
-	box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .product-card:hover {
@@ -183,19 +78,23 @@
 	box-shadow: 0 15px 40px rgba(255,193,7,0.15);
 }
 
+.product-card .product-body {
+	padding: 20px 25px 0;
+	flex: 1;
+}
+
 .product-card .product-image {
 	position: relative;
 	padding: 30px;
 	text-align: center;
+	height: 240px;
+	display: flex;
+	align-items: center;
 	background: linear-gradient(135deg, #FFF9E6 0%, #FFF3CC 100%);
 	min-height: 280px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-
-[data-theme="dark"] .product-card .product-image {
-	background: linear-gradient(135deg, #2A2200 0%, #1A1500 100%);
 }
 
 .product-card .product-image img {
@@ -209,9 +108,6 @@
 	transform: scale(1.05);
 }
 
-.product-card .product-body {
-	padding: 20px 25px 25px;
-}
 
 .product-card .product-line {
 	display: inline-block;
@@ -358,11 +254,6 @@
 	font-weight: 700;
 	color: var(--primary-color);
 	width: 40%;
-}
-
-[data-theme="dark"] .product-specs-table th,
-[data-theme="dark"] .product-specs-table td {
-	border-bottom-color: #333;
 }
 
 /************************************/
@@ -681,6 +572,12 @@ body{
 	transform: translate(-50%, -50%);
 }
 
+#loading-icon img{
+	width: 66px;
+	height: 66px;
+	object-fit: contain;
+}
+
 @keyframes rotate-loading{
 	0%{
 		transform: rotate(0deg);
@@ -905,6 +802,11 @@ header.main-header .header-sticky.active{
 	padding: 0;
 	margin: 0;
 	display: none;
+}
+
+.site-logo img {
+	max-width: 180px;
+	height: auto;
 }
 
 .main-header .header-sticky.active-sticky-header.hide .navbar-brand{

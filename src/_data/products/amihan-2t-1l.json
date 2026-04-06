@@ -1,0 +1,63 @@
+{
+  "slug": "amihan-2t-1l",
+  "name": "Amihan 2T",
+  "line": "Amihan",
+  "category": "amihan",
+  "spec": "API TA | 1 Liter",
+  "shortDesc": "2-stroke motorcycle oil in a 1-liter bottle. Perfect for shops and frequent riders.",
+  "image": "/images/products/amihan-2t-1l.png",
+  "description": "The Bagani Amihan 2T in a 1-liter bottle is ideal for motorcycle shops and frequent riders who need a larger supply. Same trusted API TA formulation in a more economical size.",
+  "description2": "Proudly made in the Philippines — Gawang Pilipino, Para sa Pilipino!",
+  "specs": {
+    "Product Name": "Amihan 2T",
+    "Brand": "Bagani",
+    "Oil Type": "2-Stroke Motorcycle Oil",
+    "Viscosity Grade": "N/A",
+    "API Standard": "API TA",
+    "Engine Type": "2-Stroke Motorcycles",
+    "Volume": "1 Liter",
+    "Origin": "Made in the Philippines"
+  },
+  "features": [
+    {
+      "title": "Economical Size",
+      "desc": "1-liter bottle for shops and riders who change oil frequently.",
+      "icon": "/images/icon-service-5.svg"
+    },
+    {
+      "title": "API TA Certified",
+      "desc": "Meets API TA standards for reliable 2-stroke engine protection.",
+      "icon": "/images/icon-service-6.svg"
+    },
+    {
+      "title": "Clean Burn",
+      "desc": "Formulated to minimize smoke and deposits for a cleaner ride.",
+      "icon": "/images/icon-service-7.svg"
+    },
+    {
+      "title": "Filipino-Made Quality",
+      "desc": "Proudly manufactured in the Philippines for local riding conditions.",
+      "icon": "/images/icon-service-8.svg"
+    }
+  ],
+  "applications": [
+    "2-stroke motorcycles and scooters",
+    "Motorcycle repair shops",
+    "Fleet maintenance",
+    "Engines requiring API TA grade oil"
+  ],
+  "faqs": [
+    {
+      "q": "What's the difference between the 200ml and 1L?",
+      "a": "Same formulation — the 1-liter bottle is more cost-effective for frequent use or shop supply."
+    },
+    {
+      "q": "How should I store unused oil?",
+      "a": "Store in a cool, dry place away from direct sunlight. Keep the cap tightly sealed to prevent contamination."
+    },
+    {
+      "q": "Where can I buy Bagani products?",
+      "a": "Bagani oils are available at authorized motorcycle shops, auto parts stores, and online marketplaces across the Philippines."
+    }
+  ]
+}

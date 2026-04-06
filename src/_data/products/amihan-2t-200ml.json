@@ -1,0 +1,63 @@
+{
+  "slug": "amihan-2t-200ml",
+  "name": "Amihan 2T",
+  "line": "Amihan",
+  "category": "amihan",
+  "spec": "API TA | 200ml",
+  "shortDesc": "2-stroke motorcycle oil for everyday commuters. Reliable engine protection in a compact size.",
+  "image": "/images/products/amihan-2t-200ml.png",
+  "description": "The Bagani Amihan 2T is a reliable 2-stroke motorcycle oil formulated for everyday commuters. Designed for the demands of Philippine roads, it provides consistent engine protection in a convenient 200ml size.",
+  "description2": "Proudly made in the Philippines — Gawang Pilipino, Para sa Pilipino! — the Amihan 2T meets API TA standards for dependable 2-stroke engine performance.",
+  "specs": {
+    "Product Name": "Amihan 2T",
+    "Brand": "Bagani",
+    "Oil Type": "2-Stroke Motorcycle Oil",
+    "Viscosity Grade": "N/A",
+    "API Standard": "API TA",
+    "Engine Type": "2-Stroke Motorcycles",
+    "Volume": "200ml",
+    "Origin": "Made in the Philippines"
+  },
+  "features": [
+    {
+      "title": "Compact Size",
+      "desc": "Convenient 200ml packaging perfect for single oil changes and on-the-go riders.",
+      "icon": "/images/icon-service-5.svg"
+    },
+    {
+      "title": "API TA Certified",
+      "desc": "Meets API TA standards for reliable 2-stroke engine protection.",
+      "icon": "/images/icon-service-6.svg"
+    },
+    {
+      "title": "Clean Burn",
+      "desc": "Formulated to minimize smoke and deposits for a cleaner ride.",
+      "icon": "/images/icon-service-7.svg"
+    },
+    {
+      "title": "Filipino-Made Quality",
+      "desc": "Proudly manufactured in the Philippines for local riding conditions.",
+      "icon": "/images/icon-service-8.svg"
+    }
+  ],
+  "applications": [
+    "2-stroke motorcycles and scooters",
+    "Daily commuter bikes",
+    "Underbone motorcycles",
+    "Engines requiring API TA grade oil"
+  ],
+  "faqs": [
+    {
+      "q": "How much Amihan 2T should I mix with gasoline?",
+      "a": "Follow your motorcycle manufacturer's recommended fuel-to-oil ratio. Most 2-stroke motorcycles use a 40:1 or 50:1 ratio."
+    },
+    {
+      "q": "Can I use this in my automatic scooter?",
+      "a": "If your scooter has a 2-stroke engine, yes. Most modern scooters are 4-stroke — check your owner's manual to confirm."
+    },
+    {
+      "q": "Where can I buy Bagani products?",
+      "a": "Bagani oils are available at authorized motorcycle shops, auto parts stores, and online marketplaces across the Philippines. Contact us at info@baganioil.com to find the nearest dealer."
+    }
+  ]
+}

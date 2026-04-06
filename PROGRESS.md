@@ -126,6 +126,107 @@
 
 ---
 
+---
+
+## Session: 2026-03-31 — Fixes & Improvements
+
+### Fix A: Remove Dark Mode ✅ DONE
+- [x] Removed dark mode toggle button from all 23 pages
+- [x] Removed dark mode JS IIFE from all 23 pages
+- [x] Removed 150+ lines of dark mode CSS from custom.css
+- [x] Updated CSS comment header (removed Toplax/Awaiken)
+
+### Fix B: Remove Toplax Branding ✅ DONE
+- [x] All `<title>` tags → "Bagani - Premium Motorcycle Oils & Lubricants"
+- [x] All `<meta name="author">` → "Bagani"
+- [x] CSS comment header updated
+
+### Fix C: Logo Replacement ✅ DONE
+- [x] Header/navbar/footer → `bagani-logo.png` (horizontal transparent logo)
+- [x] Preloader → `bagani-icon.png` (icon only transparent)
+- [x] Both sourced from: `C:\Users\vince\Downloads\assets\`
+
+### Fix D: Hero Video ✅ DONE
+- [x] Copied `Dark_Industrial_Motorcycle_Engine_Scene.mp4` → `html/videos/hero-bg.mp4`
+- [x] Replaced static parallax hero in `index.html` with video hero
+- [x] Updated `index-video.html` to use local MP4 (removed Toplax demo URL)
+
+### Fix E: Product Card Alignment ✅ DONE
+- [x] Added `display: flex; flex-direction: column; height: 100%` to `.product-card`
+- [x] Added `flex: 1` to `.product-body` for uniform card stretch
+- [x] Fixed `.product-image` height to `240px` (consistent across all cards)
+- [x] Added `.project-item-box { display: flex }` for equal-height grid columns
+
+### Fix F: Aman Gear Oil Missing Image ✅ DONE
+- [x] Diagnosed: file was 77MB at 762×2550px — too large for browser to render
+- [x] Resized to 600×2008px (420KB) using PowerShell System.Drawing
+- [x] File overwritten in-place: `html/images/products/aman-gear-oil.png`
+
+### Fix G: Contact Form → Gmail ✅ DONE
+- [x] Replaced `form-process.php` action with FormSubmit.co
+- [x] Target email: `vincecarterdelostrico12@gmail.com`
+- [x] Added hidden fields: `_subject`, `_next`, `_captcha`, `_honey` (spam trap)
+- [x] ⚠️ First submission will send a verification email to Gmail — click confirm link
+
+### Fix H: Google Maps → Pasay City ✅ DONE
+- [x] Replaced New York map embed with Pasay, Metro Manila, Philippines
+- [x] Uses standard Google Maps embed iframe
+
+---
+
+---
+
+## Session: 2026-04-02 — 11ty + Decap CMS Migration
+
+### Step 1: Convert HTML to 11ty Templates ✅ DONE
+- [x] `eleventy.config.js` — passthrough, globalData (productsList, faqsList, storesList), `where` filter
+- [x] `src/_includes/base.njk` — master layout with `{{ content | safe }}`
+- [x] `src/_includes/header.njk`, `footer.njk`, `topbar.njk`, `preloader.njk`, `page-header.njk`
+- [x] `src/index.njk`, `about.njk`, `products.njk`, `contact.njk`, `news.njk`, `faqs.njk`, `404.njk`
+- [x] `src/products/product.njk` — dynamic product pages via Eleventy pagination
+- [x] `src/news/bagani-launches-amihan-tempest.njk`
+- [x] `netlify.toml`, `package.json`, `.gitignore`
+- [x] Build: 21 pages, 0 errors (0.67s)
+
+### Step 2: Decap CMS Setup ✅ DONE
+- [x] `src/admin/index.html` — Decap CMS + Netlify Identity
+- [x] `src/admin/config.yml` — 6 collections: products, news, faqs, stores, settings, homepage
+- [x] `src/_data/site.json`, `homepage.json` — CMS-managed site settings
+- [x] `src/_data/products/*.json` — 11 product files
+- [x] `src/_data/faqs/*.json` — 6 FAQ files
+- [x] Netlify Identity widget in base.njk with login redirect to /admin/
+- [x] Build includes /admin/ as passthrough
+
+### Step 3: Store Locator Page ✅ DONE
+- [x] `src/_data/stores/*.json` — 8 Metro Manila store seed files
+- [x] `src/store-locator.njk` — Leaflet map, custom gold markers, store cards, search filter
+- [x] "Use My Location" geolocation with haversine nearest-store sort
+- [x] Full stores table at page bottom
+- [x] Store Locator added to header nav and footer quick links
+
+### Step 4: Facebook Messenger Chat Plugin ✅ DONE
+- [x] `site.facebookPageId` field in `src/_data/site.json`
+- [x] Messenger Chat SDK in `base.njk` — conditionally shown when Page ID is set
+- [x] CMS field added to Site Settings collection in `config.yml`
+- [x] Theme color: #FFC107 (Bagani gold)
+
+### Step 5: Tagalog/English Language Toggle ✅ DONE
+- [x] EN/TL toggle button in header (gold pill style)
+- [x] `toggleLang()` / `applyLang()` JS in base.njk — swaps `data-en` / `data-tl` attributes
+- [x] `localStorage` persistence across page loads
+- [x] Bilingual attributes on: nav links, hero text, footer tagline, breadcrumb "home"
+- [x] `<html lang>` attribute updated on toggle
+
+### Step 6: Deploy on Netlify
+- [ ] Push repo to GitHub
+- [ ] Connect repo to Netlify (Build: `npx @11ty/eleventy`, Publish: `_site`)
+- [ ] Enable Netlify Identity in Site Settings → Identity
+- [ ] Enable Git Gateway under Identity → Services
+- [ ] Set `facebookPageId` in CMS Settings once Facebook Page ID is known
+- [ ] Invite admin user via Netlify Identity
+
+---
+
 ## Current Status: ✅ IMPLEMENTATION COMPLETE
 
 ### Files Created/Modified

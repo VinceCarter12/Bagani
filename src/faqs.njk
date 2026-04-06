@@ -1,0 +1,66 @@
+---
+layout: base.njk
+title: FAQs
+activePage: faqs
+pageHeaderTitle: 'Frequently Asked <span>Questions</span>'
+breadcrumbActive: FAQs
+---
+
+{% include "page-header.njk" %}
+
+<!-- FAQ Section Start -->
+<div class="page-faq">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="our-faq-section">
+                    <div class="section-title">
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">General <span>Questions</span></h2>
+                    </div>
+                    <div class="faq-accordion" id="faqaccordion1">
+                        {% for faq in (faqsList | where("category", "general")) %}
+                        <div class="accordion-item wow fadeInUp"{% if not loop.first %} data-wow-delay="{{ loop.index0 * 0.2 }}s"{% endif %}>
+                            <h2 class="accordion-header" id="headingG{{ loop.index }}">
+                                <button class="accordion-button{% if not loop.first %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseG{{ loop.index }}" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" aria-controls="collapseG{{ loop.index }}">
+                                    {{ faq.question }}
+                                </button>
+                            </h2>
+                            <div id="collapseG{{ loop.index }}" class="accordion-collapse collapse{% if loop.first %} show{% endif %}" aria-labelledby="headingG{{ loop.index }}" data-bs-parent="#faqaccordion1">
+                                <div class="accordion-body">
+                                    <p>{{ faq.answer }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6">
+                <div class="our-faq-section">
+                    <div class="section-title">
+                        <h2 class="text-anime-style-3" data-cursor="-opaque">Product & Dealer <span>Questions</span></h2>
+                    </div>
+                    <div class="faq-accordion" id="faqaccordion2">
+                        {% set productDealerFaqs = (faqsList | where("category", "product")).concat(faqsList | where("category", "dealer")) %}
+                        {% for faq in productDealerFaqs %}
+                        <div class="accordion-item wow fadeInUp"{% if not loop.first %} data-wow-delay="{{ loop.index0 * 0.2 }}s"{% endif %}>
+                            <h2 class="accordion-header" id="headingP{{ loop.index }}">
+                                <button class="accordion-button{% if not loop.first %} collapsed{% endif %}" type="button" data-bs-toggle="collapse" data-bs-target="#collapseP{{ loop.index }}" aria-expanded="{% if loop.first %}true{% else %}false{% endif %}" aria-controls="collapseP{{ loop.index }}">
+                                    {{ faq.question }}
+                                </button>
+                            </h2>
+                            <div id="collapseP{{ loop.index }}" class="accordion-collapse collapse{% if loop.first %} show{% endif %}" aria-labelledby="headingP{{ loop.index }}" data-bs-parent="#faqaccordion2">
+                                <div class="accordion-body">
+                                    <p>{{ faq.answer }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- FAQ Section End -->

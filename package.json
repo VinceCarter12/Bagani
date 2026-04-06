@@ -1,0 +1,24 @@
+{
+  "name": "bagani-oil",
+  "version": "1.0.0",
+  "description": "Bagani Oil - Premium oils and lubricants",
+  "scripts": {
+    "start": "npx @11ty/eleventy --serve",
+    "build": "npx @11ty/eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VinceCarter12/Bagani.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/VinceCarter12/Bagani/issues"
+  },
+  "homepage": "https://github.com/VinceCarter12/Bagani#readme",
+  "devDependencies": {
+    "@11ty/eleventy": "^3.1.5"
+  }
+}

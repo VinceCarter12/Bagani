@@ -5,11 +5,11 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
-	<meta name="description" content="News article from Bagani motorcycle oils">
-	<meta name="keywords" content="Bagani, motorcycle oil, news, Philippines">
-	<meta name="author" content="Bagani">
+	<meta name="description" content="News article from Bagani Oil">
+	<meta name="keywords" content="Bagani Oil, news, Philippines">
+	<meta name="author" content="Bagani Oil">
 	<!-- Page Title -->
-    <title>News Article - Bagani</title>
+    <title>News Article - Bagani Oil</title>
 	<!-- Favicon Icon -->
 	<link rel="shortcut icon" type="image/x-icon" href="images/favicon.png">
 	<!-- Google Fonts Css-->
@@ -39,7 +39,7 @@
 	<div class="preloader">
 		<div class="loading-container">
 			<div class="loading"></div>
-			<div id="loading-icon"><img src="images/loader.svg" alt=""></div>
+			<div id="loading-icon"><img src="images/bagani-icon.png" alt=""></div>
 		</div>
 	</div>
 	<!-- Preloader End -->
@@ -51,7 +51,7 @@
                 <div class="col-lg-3">
                     <div class="site-logo">
                         <a href="./">
-                            <img src="images/logo.svg" alt="Logo">
+                            <img src="images/bagani-logo.png" alt="Logo">
                         </a>
                     </div>
 					<!-- Logo End -->
@@ -98,7 +98,7 @@
 				<div class="container">
                     <!-- Logo Start -->
 					<a class="navbar-brand" href="./">
-						<img src="images/footer-logo.svg" alt="Logo">
+						<img src="images/bagani-logo.png" alt="Logo">
 					</a>
 					<!-- Logo End -->
 
@@ -125,9 +125,7 @@
                                 </ul>
                             </div>
                             <!-- Header Social Links End -->
-                            <button class="dark-mode-toggle" id="darkModeToggle" aria-label="Toggle dark mode">
-                                <i class="fa-solid fa-moon"></i>
-                            </button>
+
                         </div>
                         <!-- Header Social Box End -->
 					</div>
@@ -255,7 +253,7 @@
                         <!-- Section Title Start -->
                         <div class="section-title dark-section">
                             <h2 class="text-anime-style-2" data-cursor="-opaque">Ready to power your ride?</h2>
-                            <p>Experience the quality of Bagani motorcycle oils. Gawang Pilipino, Para sa Pilipino!</p>
+                            <p>Experience the quality of Bagani Oil. Gawang Pilipino, Para sa Pilipino!</p>
                         </div>
                         <!-- Section Title End -->
 
@@ -273,13 +271,13 @@
                     <div class="about-footer">
                         <!-- Footer Logo Start -->
                         <div class="footer-logo">
-                            <img src="images/footer-logo.svg" alt="">
+                            <img src="images/bagani-logo.png" alt="">
                         </div>
                         <!-- Footer Logo End -->
 
                         <!-- About Footer Content Start -->
                         <div class="about-footer-content">
-                            <p>Bagani — Premium motorcycle oils and lubricants proudly made in the Philippines.</p>
+                            <p>Bagani Oil — Premium oils and lubricants proudly made in the Philippines.</p>
                         </div>
                         <!-- About Footer Content End -->
 
@@ -345,7 +343,7 @@
                     <div class="col-lg-12">
                         <!-- Footer Copyright Start -->
                         <div class="footer-copyright-text">
-                            <p>Copyright &copy; 2026 Bagani. All Rights Reserved.</p>
+                            <p>Copyright &copy; 2026 Bagani Oil. All Rights Reserved.</p>
                         </div>
                         <!-- Footer Copyright End -->
                     </div>
@@ -389,32 +387,6 @@
     <script src="js/wow.min.js"></script>
     <!-- Main Custom js file -->
     <script src="js/function.js"></script>
-    <!-- Dark Mode Toggle -->
-    <script>
-    (function() {
-        const toggle = document.getElementById('darkModeToggle');
-        const html = document.documentElement;
-        const icon = toggle ? toggle.querySelector('i') : null;
-        const savedTheme = localStorage.getItem('bagani-theme');
-        if (savedTheme === 'dark') {
-            html.setAttribute('data-theme', 'dark');
-            if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
-        }
-        if (toggle) {
-            toggle.addEventListener('click', function() {
-                const isDark = html.getAttribute('data-theme') === 'dark';
-                if (isDark) {
-                    html.removeAttribute('data-theme');
-                    localStorage.setItem('bagani-theme', 'light');
-                    if (icon) { icon.classList.remove('fa-sun'); icon.classList.add('fa-moon'); }
-                } else {
-                    html.setAttribute('data-theme', 'dark');
-                    localStorage.setItem('bagani-theme', 'dark');
-                    if (icon) { icon.classList.remove('fa-moon'); icon.classList.add('fa-sun'); }
-                }
-            });
-        }
-    })();
-    </script>
+
 </body>
 </html>

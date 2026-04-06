@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "subtitle": "Premium Motorcycle Oils",
+    "title": "Fuel Your Ride with Bagani Power",
+    "description": "Gawang Pilipino, Para sa Pilipino! Bagani Oil delivers high-performance oils and lubricants engineered for every Filipino.",
+    "buttonText": "Explore Products",
+    "buttonUrl": "/products/"
+  },
+  "about": {
+    "subtitle": "about bagani",
+    "title": "Engineered for performance, built for Filipino riders",
+    "description": "Bagani is a proudly Filipino brand of motorcycle oils and lubricants, crafted with precision to keep every ride smooth, powerful, and protected.",
+    "years": 10,
+    "rating": "4.9",
+    "ratingCount": "15.5K"
+  },
+  "testimonials": [
+    {
+      "quote": "Since switching to Bagani Amihan, my engine runs smoother and cooler. The quality is unmatched for the price. Proud to support a Filipino brand!",
+      "author": "Juan dela Cruz",
+      "role": "Daily Commuter",
+      "image": "/images/author-1.jpg"
+    },
+    {
+      "quote": "I've tried many oil brands but Bagani Laon gives me the best engine protection for my delivery motorcycle. Highly recommended for heavy use!",
+      "author": "Mark Santos",
+      "role": "Delivery Rider",
+      "image": "/images/author-2.jpg"
+    }
+  ]
+}

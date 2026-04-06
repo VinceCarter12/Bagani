@@ -1,0 +1,77 @@
+---
+layout: base.njk
+activePage: news
+---
+
+<!-- Page Header Start -->
+<div class="page-header parallaxie">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-12">
+                <div class="page-header-box">
+                    <h1 class="text-anime-style-2" data-cursor="-opaque">{{ title }}</h1>
+                    <nav class="wow fadeInUp">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="/">home</a></li>
+                            <li class="breadcrumb-item"><a href="/news/">news</a></li>
+                            <li class="breadcrumb-item active" aria-current="page">article</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+<!-- Page Single Post Start -->
+<div class="page-single-post">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                {% if image %}
+                <div class="post-image">
+                    <figure class="image-anime reveal">
+                        <img src="{{ image }}" alt="{{ title }}">
+                    </figure>
+                </div>
+                {% endif %}
+
+                <div class="post-content">
+                    <div class="post-entry">
+                        {{ content | safe }}
+                    </div>
+
+                    {% if tags %}
+                    <div class="post-tag-links">
+                        <div class="row align-items-center">
+                            <div class="col-lg-8">
+                                <div class="post-tags wow fadeInUp" data-wow-delay="0.5s">
+                                    <span class="tag-links">
+                                        Tags:
+                                        {% for tag in tags %}
+                                        {% if tag != "news" %}
+                                        <a href="#">{{ tag }}</a>
+                                        {% endif %}
+                                        {% endfor %}
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="col-lg-4">
+                                <div class="post-social-sharing wow fadeInUp" data-wow-delay="0.5s">
+                                    <ul>
+                                        <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-linkedin-in"></i></a></li>
+                                        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Page Single Post End -->
